@@ -47,9 +47,9 @@ export default function Dashboard() {
   }, [lastMessage]);
 
   return (
-    <div>
+    <div className="flex flex-col justify-center">
       <RealtimeData></RealtimeData>
-      <div className="grid  px-10 gap-2 pt-2">
+      <div className="grid lg:grid-cols-2 lg:px-10 px-2 gap-2 pt-2">
         {/* <h1>{connectionStatus}</h1> */}
         {/* <Card className=" w-lg">
           <CardHeader>

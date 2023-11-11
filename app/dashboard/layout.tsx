@@ -19,8 +19,8 @@ export default function DashboardLayout({
       <body>
         <div className="border-b ">
           <div className="flex flex-col w-max h-13">
-            <div className="p-3">
-              <h1 className="text-lg font-semibold">
+            <div className="px-3 py-4">
+              <h1 className="text-lg text-center font-semibold sm:text-md">
                 Punturin SHS Guardian Tracker Dashboard
               </h1>
             </div>

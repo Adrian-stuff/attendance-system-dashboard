@@ -28,7 +28,7 @@ const RealtimeData = () => {
   return (
     <>
       {isReady ? (
-        <Card className="w-lg">
+        <Card className="w-lg sm:w-sm px-2">
           <CardHeader>
             <CardTitle>Realtime Data</CardTitle>
           </CardHeader>
