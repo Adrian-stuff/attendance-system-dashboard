@@ -10,22 +10,22 @@ const StudentsPresent = ({ gradeLevel }: { gradeLevel: "11" | "12" }) => {
   >([]);
   useEffect(() => {
     const tempData = sections.filter((a) => a.gradeLevel == +gradeLevel);
-    console.log("tempData", tempData);
+    // console.log("tempData", tempData);
     const newData = tempData.map((data) => ({
       section: data.section,
       "Present Students": data.numberOfAttendance,
     }));
     setData(newData);
     useAttendanceStore.subscribe((state, prevState) => {
-      console.log(state.sections);
+      // console.log(state.sections);
       let sectionData = state.sections;
       const tempData = sectionData.filter((a) => a.gradeLevel == +gradeLevel);
-      console.log("tempData", tempData);
+      // console.log("tempData", tempData);
       const newData = tempData.map((data) => ({
         section: data.section,
         "Present Students": data.numberOfAttendance,
       }));
-      console.log("newData", newData);
+      // console.log("newData", newData);
       setData(newData);
     });
   }, []);
@@ -33,13 +33,14 @@ const StudentsPresent = ({ gradeLevel }: { gradeLevel: "11" | "12" }) => {
   return (
     <Card className="w-lg">
       <CardHeader>
-        <CardTitle>Present Students per section</CardTitle>
-        <CardDescription>Grade {gradeLevel}</CardDescription>
+        <CardTitle>Grade {gradeLevel}</CardTitle>
+        <CardDescription>Present Students per section</CardDescription>
       </CardHeader>
       <div className="px-10">
         <BarChart
           className="mt-6 h-72 w-lg "
           data={data}
+          colors={gradeLevel == "11" ? ["yellow"] : ["blue"]}
           index="section"
           categories={["Present Students"]}
           yAxisWidth={48}

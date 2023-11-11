@@ -16,7 +16,7 @@ export default function DashboardLayout({
 }) {
   return (
     <html lang="en">
-      <body className="grid-cols-2 gap-1">
+      <body>
         <div className="border-b ">
           <div className="flex flex-col w-max h-13">
             <div className="p-3">
@@ -24,7 +24,7 @@ export default function DashboardLayout({
                 Punturin SHS Guardian Tracker Dashboard
               </h1>
             </div>
-            <NavigationMenu>
+            {/* <NavigationMenu>
               <NavigationMenuList>
                 <NavigationMenuItem>
                   <NavigationMenuLink className={navigationMenuTriggerStyle()}>
@@ -32,7 +32,7 @@ export default function DashboardLayout({
                   </NavigationMenuLink>
                 </NavigationMenuItem>
               </NavigationMenuList>
-            </NavigationMenu>
+            </NavigationMenu> */}
           </div>
         </div>
 
