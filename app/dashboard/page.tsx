@@ -49,7 +49,7 @@ export default function Dashboard() {
   return (
     <div>
       <RealtimeData></RealtimeData>
-      <div className="grid grid-cols-2 px-10 gap-10 pt-2">
+      <div className="grid  px-10 gap-2 pt-2">
         {/* <h1>{connectionStatus}</h1> */}
         {/* <Card className=" w-lg">
           <CardHeader>
