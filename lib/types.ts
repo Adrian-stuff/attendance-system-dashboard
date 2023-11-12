@@ -1,9 +1,11 @@
 export interface AttendanceJson {
-  message: string;
+  id: number;
+  attendanceStatus: string;
+  date: string;
   time: string;
-  studentLrn: number;
-  status: string;
+  timeOut: any;
   student: Student;
+  section: Section;
 }
 
 export interface Student {
@@ -30,6 +32,7 @@ export interface StudentSection {
   gradeLevel: GradeLevel;
   sectionName: string;
   teacher: Teacher;
+  strand: Strand;
 }
 
 export interface GradeLevel {
@@ -40,12 +43,43 @@ export interface GradeLevel {
 export interface Teacher {
   id: number;
   firstName: string;
-  middleName: any;
+  middleName: string;
   lastName: string;
+}
+
+export interface Strand {
+  id: number;
+  strandName: string;
 }
 
 export interface Guardian {
   id: number;
   fullName: string;
   contactNumber: string;
+}
+
+export interface Section {
+  sectionId: number;
+  room: number;
+  gradeLevel: GradeLevel2;
+  sectionName: string;
+  teacher: Teacher2;
+  strand: Strand2;
+}
+
+export interface GradeLevel2 {
+  id: number;
+  gradeName: string;
+}
+
+export interface Teacher2 {
+  id: number;
+  firstName: string;
+  middleName: string;
+  lastName: string;
+}
+
+export interface Strand2 {
+  id: number;
+  strandName: string;
 }

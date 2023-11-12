@@ -24,15 +24,6 @@ export default function DashboardLayout({
                 Punturin SHS Guardian Tracker Dashboard
               </h1>
             </div>
-            {/* <NavigationMenu>
-              <NavigationMenuList>
-                <NavigationMenuItem>
-                  <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                    Home
-                  </NavigationMenuLink>
-                </NavigationMenuItem>
-              </NavigationMenuList>
-            </NavigationMenu> */}
           </div>
         </div>
 

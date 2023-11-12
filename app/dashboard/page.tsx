@@ -13,6 +13,7 @@ import {
 import useWebSocket, { ReadyState } from "react-use-websocket";
 import { socketURL } from "@/lib/socket";
 import { getData } from "./data";
+import StudentsTable from "@/components/StudentsTable";
 
 export default function Dashboard() {
   const { sendMessage, lastMessage, readyState } = useWebSocket(socketURL);
@@ -47,57 +48,18 @@ export default function Dashboard() {
   }, [lastMessage]);
 
   return (
-    <div className="flex flex-col justify-center">
-      <RealtimeData></RealtimeData>
-      <div className="grid lg:grid-cols-2 lg:px-10 px-2 gap-2 pt-2">
+    <div className="flex flex-col justify-center items-center ">
+      <div className="w-full px-10 mt-5">
+        <RealtimeData></RealtimeData>
+      </div>
+      <div className="grid lg:grid-cols-2 lg:px-10 px-2 gap-2 pt-2 w-full">
         {/* <h1>{connectionStatus}</h1> */}
-        {/* <Card className=" w-lg">
-          <CardHeader>
-            <CardTitle> Absents per section</CardTitle>
-            <CardDescription>Grade 12</CardDescription>
-          </CardHeader>
-          <div className="px-10">
-            <DonutChart
-              className="mt-6 h-72 w-lg "
-              data={absentData}
-              index="section"
-              category={"absent"}
-              colors={["violet", "rose", "blue", "green"]}
-            ></DonutChart>
-          </div>
-        </Card> */}
+
         <StudentsPresent gradeLevel="11"></StudentsPresent>
         <StudentsPresent gradeLevel="12"></StudentsPresent>
       </div>
-      <div>
-        {/* <Button
-          onClick={() => {
-            addAttendance({
-              time: `${count + 1}:${
-                Math.floor(Math.random() * (59 - 1 + 1)) + 1
-              }`,
-              gradeLevel: {
-                "Grade 11": Math.floor(Math.random() * (50 - 1 + 1)) + 1,
-                "Grade 12": Math.floor(Math.random() * (50 - 1 + 1)) + 1,
-              },
-            });
-            setCount((state) => state + 1);
-          }}
-        >
-          Click
-        </Button> */}
-        {/* <Button
-          onClick={() => {
-            updateSectionAttendance(
-              sections[getRandomNumber(0, sections.length - 1)].section,
-              getRandomNumber(11, 12),
-
-              getRandomNumber(10, 60)
-            );
-          }}
-        >
-          Add Section Attendance
-        </Button> */}
+      <div className="w-full px-10 my-5 ">
+        <StudentsTable></StudentsTable>
       </div>
     </div>
   );
